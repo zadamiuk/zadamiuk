@@ -1,5 +1,5 @@
 ## 👋 Hi everyone! 
-My name's Zuza - I'm Biomedical Informatics graduate (at * *Warsaw Univeristy of Technology* *) and Frontend (sometimes even Fullstack) Developer.
+My name's Zuza - I'm Biomedical Informatics graduate (at *Warsaw Univeristy of Technology*) and Frontend (sometimes even Fullstack) Developer.
 <br /><br />
 My favourite techs that I'm currently working with are:<br />
 🫀 **Javascript** - React, TypeScript, Redux<br />
