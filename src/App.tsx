@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  ContentContainer,
+  MainContainer,
+  SidebarContainer,
+} from './App.styles';
+import { useSectionRefs } from './hooks/useSectionRefs';
+import { ExperierceSection } from './sections/experience/ExperienceSection';
+import { Sidebar } from './sections/sidebar';
 
 function App() {
+  const { experience, education, projects, skills, inViewList, refsList } =
+    useSectionRefs();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MainContainer>
+      <SidebarContainer>
+        <Sidebar
+          navItemsActivityList={inViewList}
+          navItemsRefsList={refsList}
+        />
+      </SidebarContainer>
+      <ContentContainer>
+        <ExperierceSection ref={experience.ref} />
+        <ExperierceSection ref={education.ref} />
+        <ExperierceSection ref={projects.ref} />
+        <ExperierceSection ref={skills.ref} />
+      </ContentContainer>
+    </MainContainer>
   );
 }
 
