@@ -13,16 +13,38 @@ export const useSectionRefs = () => {
   const { ref: skillsRef, inView: skillsInView } = useInView();
   const skills = { ref: skillsRef, inView: skillsInView };
 
-  console.log(education.ref);
-
-  const inViewList = [
+  const allInViews = [
     experience.inView,
     education.inView,
     projects.inView,
     skills.inView,
   ];
 
-  const refsList = [experience.ref, education.ref, projects.ref, skills.ref];
+  const updateInViewListToOnlyHaveLatestTrueValue = (allInViews: boolean[]) => {
+    let inViewList = [];
+    let trueIndexes = [];
+    for (let i = 0; i < allInViews.length; i++) {
+      if (!trueIndexes.length) {
+        if (allInViews[i]) {
+          trueIndexes.push(i);
+        }
+        inViewList.push(allInViews[i]);
+      } else {
+        if (allInViews[i]) {
+          inViewList.pop();
+          inViewList.push(false);
+        }
+        inViewList.push(allInViews[i]);
+      }
+    }
+    return inViewList;
+  };
 
-  return { experience, education, projects, skills, inViewList, refsList };
+  return {
+    experience,
+    education,
+    projects,
+    skills,
+    inViewList: updateInViewListToOnlyHaveLatestTrueValue(allInViews),
+  };
 };

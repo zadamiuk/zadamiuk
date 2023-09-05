@@ -8,16 +8,13 @@ import { ExperierceSection } from './sections/experience/ExperienceSection';
 import { Sidebar } from './sections/sidebar';
 
 function App() {
-  const { experience, education, projects, skills, inViewList, refsList } =
+  const { experience, education, projects, skills, inViewList } =
     useSectionRefs();
 
   return (
     <MainContainer>
       <SidebarContainer>
-        <Sidebar
-          navItemsActivityList={inViewList}
-          navItemsRefsList={refsList}
-        />
+        <Sidebar navItemsActivityList={inViewList} />
       </SidebarContainer>
       <ContentContainer>
         <ExperierceSection ref={experience.ref} />

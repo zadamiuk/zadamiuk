@@ -4,12 +4,24 @@ import { COLORS } from '../../constants/colors';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 50px;
   background-color: ${COLORS.sidebar};
   padding: 60px;
   align-items: center;
   max-width: 200px;
   height: 100vh;
+`;
+
+export const InfoWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+`;
+
+export const AvatarWrapper = styled.div`
+  display: flex;
+  justify-content: center;
 `;
 
 export const Avatar = styled.img`

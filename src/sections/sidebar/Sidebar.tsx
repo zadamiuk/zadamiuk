@@ -8,10 +8,12 @@ import { NAVIGATION_ITEMS } from '../../constants/navigation';
 
 import {
   Avatar,
+  AvatarWrapper,
   Container,
   Emoji,
   FullName,
   Icon,
+  InfoWrapper,
   Navigation,
   NavigationItem,
   NavigationLink,
@@ -22,45 +24,47 @@ import {
 } from './Sidebar.styles';
 import { SidebarProps } from './Sidebar.types';
 
-export const Sidebar = ({
-  navItemsActivityList,
-  navItemsRefsList,
-}: SidebarProps) => (
+export const Sidebar = ({ navItemsActivityList }: SidebarProps) => {
+  return (
     <Container>
-      <Avatar src={avatar} />
-      <PersonalInfoWrapper>
-        <TopPersonalInfoWrapper>
-          <FullName>Zuzanna Adamiuk</FullName>
-          <Techs>React • Typescript • Python</Techs>
-        </TopPersonalInfoWrapper>
-        <Navigation>
-          {Object.keys(NAVIGATION_ITEMS).map((elem, no) => (
-            <NavigationItem key={elem}>
-              <NavigationLink
-                isActive={navItemsActivityList[no]}
-                href={`#${elem}`}
-              >
-                {NAVIGATION_ITEMS[elem]}
-              </NavigationLink>
-              {navItemsActivityList[no] && <Emoji src={eyes} />}
-            </NavigationItem>
-          ))}
-        </Navigation>
-        <SocialWrapper>
-          <Icon
-            src={linkedin}
-            onClick={() => window.open(EXTERNAL_URLS.linkedin, '_blank')}
-          />
-          <Icon
-            src={github}
-            onClick={() => window.open(EXTERNAL_URLS.github, '_blank')}
-          />
-          <Icon
-            src={email}
-            onClick={() => window.location.assign(EXTERNAL_URLS.mail)}
-          />
-        </SocialWrapper>
-      </PersonalInfoWrapper>
+      <InfoWrapper>
+        <AvatarWrapper>
+          <Avatar src={avatar} />
+        </AvatarWrapper>
+        <PersonalInfoWrapper>
+          <TopPersonalInfoWrapper>
+            <FullName>Zuzanna Adamiuk</FullName>
+            <Techs>React • Typescript • Python</Techs>
+          </TopPersonalInfoWrapper>
+          <Navigation>
+            {Object.keys(NAVIGATION_ITEMS).map((elem, no) => (
+              <NavigationItem key={elem}>
+                <NavigationLink
+                  isActive={navItemsActivityList[no]}
+                  href={`#${elem}`}
+                >
+                  {NAVIGATION_ITEMS[elem]}
+                </NavigationLink>
+                {navItemsActivityList[no] && <Emoji src={eyes} />}
+              </NavigationItem>
+            ))}
+          </Navigation>
+        </PersonalInfoWrapper>
+      </InfoWrapper>
+      <SocialWrapper>
+        <Icon
+          src={linkedin}
+          onClick={() => window.open(EXTERNAL_URLS.linkedin, '_blank')}
+        />
+        <Icon
+          src={github}
+          onClick={() => window.open(EXTERNAL_URLS.github, '_blank')}
+        />
+        <Icon
+          src={email}
+          onClick={() => window.location.assign(EXTERNAL_URLS.mail)}
+        />
+      </SocialWrapper>
     </Container>
   );
-
+};
