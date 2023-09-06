@@ -5,6 +5,7 @@ import github from '../../assets/social-media/github.png';
 import linkedin from '../../assets/social-media/linkedin.png';
 import { EXTERNAL_URLS } from '../../constants/external-urls';
 import { NAVIGATION_ITEMS } from '../../constants/navigation';
+import { SIDEBAR_STRINGS } from '../../constants/sidebar-strings';
 
 import {
   Avatar,
@@ -33,8 +34,8 @@ export const Sidebar = ({ navItemsActivityList }: SidebarProps) => {
         </AvatarWrapper>
         <PersonalInfoWrapper>
           <TopPersonalInfoWrapper>
-            <FullName>Zuzanna Adamiuk</FullName>
-            <Techs>React • Typescript • Python</Techs>
+            <FullName>{SIDEBAR_STRINGS.fullname}</FullName>
+            <Techs>{SIDEBAR_STRINGS.title}</Techs>
           </TopPersonalInfoWrapper>
           <Navigation>
             {Object.keys(NAVIGATION_ITEMS).map((elem, no) => (

@@ -1,16 +1,19 @@
 import { forwardRef } from 'react';
-import { SectionHeader } from '../../common/SectionHeader/SectionHeader';
+import { SectionContainer } from '../../common/SectionContainer';
 import { EXPERIENCE_CONFIG } from '../../constants/experience';
-import { Container } from './ExperienceSection.styles';
+import { NAVIGATION_ITEMS } from '../../constants/navigation';
 import { ExperienceItem } from './components/ExperienceItem/ExperienceItem';
 
 export const ExperierceSection = forwardRef<HTMLDivElement>((props, ref) => {
   return (
-    <Container id='experience' ref={ref}>
-      <SectionHeader text='Experience' />
+    <SectionContainer
+      id='experience'
+      ref={ref}
+      header={NAVIGATION_ITEMS.experience}
+    >
       {EXPERIENCE_CONFIG.map((elem, id) => (
         <ExperienceItem key={id} experienceElem={elem} />
       ))}
-    </Container>
+    </SectionContainer>
   );
 });

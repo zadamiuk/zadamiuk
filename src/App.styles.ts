@@ -16,4 +16,8 @@ export const SidebarContainer = styled.div`
 
 export const ContentContainer = styled.div`
   flex-grow: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 60px;
 `;

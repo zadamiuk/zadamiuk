@@ -4,10 +4,11 @@ import { COLORS } from '../../constants/colors';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 50px;
   background-color: ${COLORS.sidebar};
-  padding: 60px;
-  align-items: center;
+  padding: 0 60px;
   max-width: 200px;
   height: 100vh;
 `;
