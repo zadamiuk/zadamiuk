@@ -4,7 +4,7 @@ import {
   SidebarContainer,
 } from './App.styles';
 import { useSectionRefs } from './hooks/useSectionRefs';
-import { EducationSection } from './sections/experience copy/EducationSection';
+import { EducationSection } from './sections/education/EducationSection';
 import { ExperierceSection } from './sections/experience/ExperienceSection';
 import { Sidebar } from './sections/sidebar';
 

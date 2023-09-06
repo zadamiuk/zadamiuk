@@ -1,4 +1,4 @@
-import { EducationEntity } from '../sections/experience copy/types/EducationEntity.types';
+import { EducationEntity } from '../sections/education/types/EducationEntity.types';
 
 export const EDUCATION_CONFIG: EducationEntity[] = [
   {
