@@ -42,9 +42,9 @@ export const Sidebar = ({ navItemsActivityList }: SidebarProps) => {
               <NavigationItem key={elem}>
                 <NavigationLink
                   isActive={navItemsActivityList[no]}
-                  href={`#${elem}`}
+                  href={`#${NAVIGATION_ITEMS[elem].id}`}
                 >
-                  {NAVIGATION_ITEMS[elem]}
+                  {NAVIGATION_ITEMS[elem].name}
                 </NavigationLink>
                 {navItemsActivityList[no] && <Emoji src={eyes} />}
               </NavigationItem>

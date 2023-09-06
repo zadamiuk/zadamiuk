@@ -7,9 +7,9 @@ import { EducationItem } from './components/ExperienceItem/EducationItem';
 export const EducationSection = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <SectionContainer
-      id='education'
+      id={NAVIGATION_ITEMS.education.id}
       ref={ref}
-      header={NAVIGATION_ITEMS.education}
+      header={NAVIGATION_ITEMS.education.name}
     >
       {EDUCATION_CONFIG.map((elem, id) => (
         <EducationItem key={id} educationElem={elem} />

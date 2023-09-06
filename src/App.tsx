@@ -6,6 +6,7 @@ import {
 import { useSectionRefs } from './hooks/useSectionRefs';
 import { EducationSection } from './sections/education/EducationSection';
 import { ExperierceSection } from './sections/experience/ExperienceSection';
+import { ProjectsSection } from './sections/projects/ProjectsSection';
 import { Sidebar } from './sections/sidebar';
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
       <ContentContainer>
         <ExperierceSection ref={experience.ref} />
         <EducationSection ref={education.ref} />
-        <ExperierceSection ref={projects.ref} />
+        <ProjectsSection ref={projects.ref} />
         <ExperierceSection ref={skills.ref} />
       </ContentContainer>
     </MainContainer>
