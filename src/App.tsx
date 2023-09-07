@@ -4,13 +4,15 @@ import {
   SidebarContainer,
 } from './App.styles';
 import { useSectionRefs } from './hooks/useSectionRefs';
+import { About } from './sections/about/About';
+import { AwardsSection } from './sections/awards/AwardsSection';
 import { EducationSection } from './sections/education/EducationSection';
 import { ExperierceSection } from './sections/experience/ExperienceSection';
 import { ProjectsSection } from './sections/projects/ProjectsSection';
 import { Sidebar } from './sections/sidebar';
 
 function App() {
-  const { experience, education, projects, skills, inViewList } =
+  const { experience, education, projects, awards, inViewList } =
     useSectionRefs();
 
   return (
@@ -19,10 +21,11 @@ function App() {
         <Sidebar navItemsActivityList={inViewList} />
       </SidebarContainer>
       <ContentContainer>
+        <About />
         <ExperierceSection ref={experience.ref} />
         <EducationSection ref={education.ref} />
         <ProjectsSection ref={projects.ref} />
-        <ExperierceSection ref={skills.ref} />
+        <AwardsSection ref={awards.ref} />
       </ContentContainer>
     </MainContainer>
   );

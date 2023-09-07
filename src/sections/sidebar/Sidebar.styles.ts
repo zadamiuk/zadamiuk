@@ -40,7 +40,7 @@ export const FullName = styled.p`
   padding: 0;
 `;
 
-export const Techs = styled.p`
+export const Title = styled.p`
   font-size: 14px;
   text-align: center;
   color: ${COLORS.secondaryText};

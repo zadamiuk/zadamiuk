@@ -10,14 +10,14 @@ export const useSectionRefs = () => {
   const { ref: projectsRef, inView: projectsInView } = useInView();
   const projects = { ref: projectsRef, inView: projectsInView };
 
-  const { ref: skillsRef, inView: skillsInView } = useInView();
-  const skills = { ref: skillsRef, inView: skillsInView };
+  const { ref: awardsRef, inView: awardsInView } = useInView();
+  const awards = { ref: awardsRef, inView: awardsInView };
 
   const allInViews = [
     experience.inView,
     education.inView,
     projects.inView,
-    skills.inView,
+    awards.inView,
   ];
 
   const updateInViewListToOnlyHaveLatestTrueValue = (allInViews: boolean[]) => {
@@ -44,7 +44,7 @@ export const useSectionRefs = () => {
     experience,
     education,
     projects,
-    skills,
+    awards,
     inViewList: updateInViewListToOnlyHaveLatestTrueValue(allInViews),
   };
 };

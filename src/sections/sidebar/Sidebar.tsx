@@ -20,7 +20,7 @@ import {
   NavigationLink,
   PersonalInfoWrapper,
   SocialWrapper,
-  Techs,
+  Title,
   TopPersonalInfoWrapper,
 } from './Sidebar.styles';
 import { SidebarProps } from './Sidebar.types';
@@ -35,7 +35,7 @@ export const Sidebar = ({ navItemsActivityList }: SidebarProps) => {
         <PersonalInfoWrapper>
           <TopPersonalInfoWrapper>
             <FullName>{SIDEBAR_STRINGS.fullname}</FullName>
-            <Techs>{SIDEBAR_STRINGS.title}</Techs>
+            <Title>{SIDEBAR_STRINGS.title}</Title>
           </TopPersonalInfoWrapper>
           <Navigation>
             {Object.keys(NAVIGATION_ITEMS).map((elem, no) => (
