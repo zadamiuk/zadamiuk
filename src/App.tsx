@@ -23,8 +23,8 @@ function App() {
       <ContentContainer>
         <About />
         <ExperierceSection ref={experience.ref} />
-        <EducationSection ref={education.ref} />
         <ProjectsSection ref={projects.ref} />
+        <EducationSection ref={education.ref} />
         <AwardsSection ref={awards.ref} />
       </ContentContainer>
     </MainContainer>

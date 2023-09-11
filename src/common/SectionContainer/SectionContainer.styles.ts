@@ -13,6 +13,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 32px;
+  max-width: 1200px;
 `;
 
 export const ItemsWrapper = styled.div`

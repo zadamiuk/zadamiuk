@@ -12,3 +12,8 @@ export const Header = styled.div`
   color: ${COLORS.header};
   font-weight: 500;
 `;
+
+export const Bold = styled.b`
+  color: ${COLORS.header};
+  font-weight: 500;
+`;

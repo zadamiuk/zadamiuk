@@ -15,8 +15,8 @@ export const useSectionRefs = () => {
 
   const allInViews = [
     experience.inView,
-    education.inView,
     projects.inView,
+    education.inView,
     awards.inView,
   ];
 
