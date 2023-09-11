@@ -1,3 +1,5 @@
+import Papa, { ParseResult } from 'papaparse';
+import { useEffect, useState } from 'react';
 import {
   ContentContainer,
   MainContainer,
@@ -10,10 +12,29 @@ import { EducationSection } from './sections/education/EducationSection';
 import { ExperierceSection } from './sections/experience/ExperienceSection';
 import { ProjectsSection } from './sections/projects/ProjectsSection';
 import { Sidebar } from './sections/sidebar';
+type Data = {
+  label: string;
+  grade: string;
+};
 
 function App() {
   const { experience, education, projects, awards, inViewList } =
     useSectionRefs();
+  const [values, setValues] = useState<Data[] | undefined>();
+  const getCSV = () => {
+    Papa.parse('/courses.csv', {
+      header: true,
+      download: true,
+      skipEmptyLines: true,
+      delimiter: ',',
+      complete: (results: ParseResult<Data>) => {
+        setValues(results.data);
+      },
+    });
+  };
+  useEffect(() => {
+    getCSV();
+  }, []);
 
   return (
     <MainContainer>

@@ -13,15 +13,12 @@ export const Techs = () => (
       <TechContainer key={id}>
         <Label>{ABOUT_CONFIG.techs[tech].label}</Label>
         <StackWrapper>
-          {ABOUT_CONFIG.techs[tech].stack.map((elem, n) => {
-            console.log(elem + n);
-            return (
-              <TechItem key={`${ABOUT_CONFIG.techs[tech].label}-${n}`}>
-                {elem}
-                {n < ABOUT_CONFIG.techs[tech].stack.length - 1 && ','}
-              </TechItem>
-            );
-          })}
+          {ABOUT_CONFIG.techs[tech].stack.map((elem, n) => (
+            <TechItem key={`${ABOUT_CONFIG.techs[tech].label}-${n}`}>
+              {elem}
+              {n < ABOUT_CONFIG.techs[tech].stack.length - 1 && ','}
+            </TechItem>
+          ))}
         </StackWrapper>
       </TechContainer>
     ))}
